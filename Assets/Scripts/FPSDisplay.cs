@@ -1,6 +1,10 @@
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Generic FPS counter
+/// </summary>
+
 public class FPSDisplay : MonoBehaviour
 {
     public TextMeshProUGUI FPSCounter;

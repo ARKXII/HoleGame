@@ -225,8 +225,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1144443683403308623}
   - component: {fileID: 1144443683403308622}
-  - component: {fileID: 1144443683403308620}
   - component: {fileID: 1144443683403308621}
+  - component: {fileID: 1144443683403308620}
   m_Layer: 7
   m_Name: HoleParent
   m_TagString: Untagged
@@ -265,9 +265,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hole2DCollider: {fileID: 0}
   ground2DCollider: {fileID: 0}
-  initialScale: 0.5
   GeneratedMeshCollider: {fileID: 0}
   GroundCollider: {fileID: 0}
+  initialScale: 0.5
+--- !u!114 &1144443683403308621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144443683403308593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec3f46ae37d7334d90d8ecbff31c255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoleParent: {fileID: 1144443683403308623}
+  speed: 2
 --- !u!135 &1144443683403308620
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -281,20 +295,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1144443683403308621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144443683403308593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec3f46ae37d7334d90d8ecbff31c255, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transform_hole: {fileID: 1144443683403308623}
-  speed: 2
 --- !u!1 &1144443683515397791
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,6 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject PauseMenuUI;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -25,15 +24,15 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        GameManager.IsInputEnabled = false;
+        GameManager.IsInputEnabled = false;         // Disable input when paused
         PauseMenuUI.SetActive(true);
-        Time.timeScale = 0.07f;
+        Time.timeScale = 0.07f;                     // Slowmotion gaming
         IsPaused = true;
     }
 
     public void Resume()
     {
-        GameManager.IsInputEnabled = true;
+        GameManager.IsInputEnabled = true;          // re enable input
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         IsPaused = false;
