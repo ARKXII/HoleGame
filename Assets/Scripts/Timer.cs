@@ -26,6 +26,7 @@ public class Timer : MonoBehaviour
         DisplayTime(timeValueInSeconds);
     }
 
+    // Timer Formatting
     public void DisplayTime(float timeToDisplay)
     {
         if (timeToDisplay < 0)

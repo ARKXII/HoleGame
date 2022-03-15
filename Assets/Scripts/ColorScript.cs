@@ -17,18 +17,18 @@ public class ColorScript : MonoBehaviour
         Blue = 2, 
         Yellow = 3,
     }
-    [SerializeField] ColorType colorType;
+    [SerializeField] ColorType colorType;               // Allows dropdown list inside Editor
     private int colorIndex;
 
     private void Awake()
     {
-        colorIndex = (int)colorType;
+        colorIndex = (int)colorType;                    // Access current ColorType selection
         // Debug.Log("Color Index is: " + colorIndex);
     }
 
     public void Start()
     {
-        Self = GetComponent<Renderer>();
+        Self = GetComponent<Renderer>();                // Change material color/tag according to selection
         if (colorIndex == 0)
         {
             Self.material = MaterialReference.red;

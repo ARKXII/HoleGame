@@ -9842,7 +9842,7 @@ MonoBehaviour:
   GameOverScreen: {fileID: 1842788993}
   Self: {fileID: 1405618667}
   timerText: {fileID: 1405618670}
-  timeValue: 5
+  timeValueInSeconds: 90
 --- !u!114 &1405618670
 MonoBehaviour:
   m_ObjectHideFlags: 0
