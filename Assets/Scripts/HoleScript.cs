@@ -46,7 +46,7 @@ public class HoleScript : MonoBehaviour
     }
 
 
-    //Physics  Optimization
+    // Physics  Optimization
     private void OnTriggerEnter(Collider other)                     //on trigger, wakeup object
     {
         Physics.IgnoreCollision(other, GroundCollider, true);

@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Kill : MonoBehaviour
+/// <summary>
+/// Eat and Point System
+/// </summary>
+
+public class EatLogic : MonoBehaviour
 {
     public float Points = 0;
     public HoleScript HoleScript;
-    public Text txt;
+    public Text CurrentScoreTxt;
+    public Text GameOverScoreTxt;
 
+    private int localInt = 0;
+
+    public GameObject GameOverScreen;
+    public GameObject Timer;
 
     // Clear Eaten Objects
     private void OnTriggerEnter(Collider other)
@@ -22,12 +31,22 @@ public class Kill : MonoBehaviour
         {
             for (int x = 0; x < GameManager.yellowValue; x++)      // Get 3 points for yellow 
                 Progress();
+        } else if (other.gameObject.tag == "Green")                // Only get points for green every two objects
+        {
+            
+            localInt++;
+            if (localInt % 2 == 0)
+            {
+                Progress();
+                localInt = 0;
+            }
         } else
         {
             Progress();
         }
         Destroy(other.gameObject);
         UpdateScore();
+        winCondition();
     }
 
     private void Progress()
@@ -41,6 +60,17 @@ public class Kill : MonoBehaviour
 
     private void UpdateScore()
     {
-        txt.text = Points.ToString();               // Push points to canvas txt
+        CurrentScoreTxt.text = Points.ToString();               // Push points to canvas txt
+        GameOverScoreTxt.text = Points.ToString();               // Push points to canvas txt
+    }
+
+    private void winCondition()
+    {
+        if (Points == GameManager.WinCondition)
+        {
+            GameManager.IsInputEnabled = false;
+            GameOverScreen.SetActive(true);
+            Timer.SetActive(false);
+        }
     }
 }
